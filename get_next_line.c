@@ -15,7 +15,7 @@ char	*remainder_checker(char **remainder, char *p_n)
 	}
 	*p_n = '\0';
 	p_n++;
-	line = ft_strdup(*remainder);
+	line = ft_strdup_n(*remainder);
 	if (!p_n)
 	{
 		free(*remainder);
@@ -59,13 +59,13 @@ char	*get_next_line(int fd)
 	return (remainder_checker(&remainder, p_n));
 }
 
-int main()
-{
-	int fd = open("my_file.txt", O_RDONLY, O_CREAT);
-	char *line;
-	while (line = get_next_line(fd))
-	{
-		printf("%s\n",line);
-	}
-
-}
+//int main()
+//{
+//	int fd = open("my_file.txt", O_RDONLY, O_CREAT);
+//	char *line;
+//	while (line = get_next_line(fd))
+//	{
+//		printf("%s",line);
+//	}
+//
+//}

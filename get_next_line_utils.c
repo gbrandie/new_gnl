@@ -70,3 +70,24 @@ char	*ft_strjoin(char *remainder, char *buf)
 	free(remainder);
 	return (result);
 }
+
+char	*ft_strdup_n(char *src)
+{
+	char	*dst;
+	size_t		src_len;
+	int		i;
+
+	i = 0;
+	src_len = ft_strlen(src);
+	dst = (char *)malloc((src_len + 2) * sizeof(char));
+	if (dst == NULL)
+		return (NULL);
+	while (src[i] != '\0')
+	{
+		dst[i] = src[i];
+		i++;
+	}
+	dst[i++] = '\n';
+	dst[i] = '\0';
+	return (dst);
+}
