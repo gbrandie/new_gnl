@@ -2,7 +2,9 @@
 # define GET_NEXT_LINE_H
 # include <unistd.h>
 # include <stdlib.h>
-//# define BUFFER_SIZE 9999
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 32
+# endif
 size_t	ft_strlen(const char *string);
 char	*ft_strdup(char *src);
 char	*ft_strchr(const char *string, int symbol);

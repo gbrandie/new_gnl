@@ -30,7 +30,7 @@ char	*ft_strchr(const char *string, int symbol)
 char	*ft_strdup(char *src)
 {
 	char	*dst;
-	size_t		src_len;
+	size_t	src_len;
 	int		i;
 
 	i = 0;
@@ -74,7 +74,7 @@ char	*ft_strjoin(char *remainder, char *buf)
 char	*ft_strdup_n(char *src)
 {
 	char	*dst;
-	size_t		src_len;
+	size_t	src_len;
 	int		i;
 
 	i = 0;

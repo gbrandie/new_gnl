@@ -1,6 +1,5 @@
 #include "get_next_line.h"
-#include <stdio.h>
-#include <fcntl.h>
+
 char	*remainder_checker(char **remainder, char *p_n)
 {
 	char	*temp;
@@ -38,7 +37,7 @@ char	*read_file(int fd, char *remainder, char *buf)
 		read_size = read(fd, buf, BUFFER_SIZE);
 		buf[read_size] = '\0';
 		remainder = ft_strjoin(remainder, buf);
-		if (ft_strchr(remainder,'\n'))
+		if (ft_strchr(remainder, '\n'))
 			return (remainder);
 	}
 	return (remainder);
@@ -55,17 +54,6 @@ char	*get_next_line(int fd)
 	remainder = read_file(fd, remainder, buf);
 	if (!remainder || ft_strlen(remainder) == 0)
 		return (NULL);
-	p_n = ft_strchr(remainder,'\n');
+	p_n = ft_strchr(remainder, '\n');
 	return (remainder_checker(&remainder, p_n));
 }
-
-//int main()
-//{
-//	int fd = open("my_file.txt", O_RDONLY, O_CREAT);
-//	char *line;
-//	while (line = get_next_line(fd))
-//	{
-//		printf("%s",line);
-//	}
-//
-//}
